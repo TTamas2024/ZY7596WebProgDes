@@ -1,0 +1,30 @@
+VS CODE BEÁLLÍTÁSOK ÉS BŐVÍTMÉNYEK:
+
+Text Editor:
+    Default Formatter:           [Prettier - Code formatter]
+    Linked Editing:              [True]
+    Format On Save:              [True]*
+    Ignore Trim Whitespace:      [False]
+    Trin Final Newlines:         [True]
+Workbench:
+    Color Theme:                 [Material Theme Palenight High Contrast]
+    Icon Theme:                  [Material Icon Theme]
+Features:
+    Confirm Delete:              [False]
+    Confirm Drag And Drop        [False]
+    Terminal Default Profile     [Git Bash]
+Extensions:
+    Prettier Single Quote        [True]
+
+
+Bővítmények:
+    Auto Rename Tag (Jun Han)
+    Better Comments (Aaron Bond)
+    ESLint (Microsoft)
+    Live Server (Ritwick Dey)
+    Prettier - Code formatter (Prettier)
+    Material Icon Theme (Philipp Kief)
+    Material Theme (Equinusocio)
+
+
+*False-ra állítva a feladatok megoldása miatt.
