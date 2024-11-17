@@ -1,0 +1,23 @@
+h2 {
+   color: orange;
+}
+
+p {
+   color: gray;
+}
+
+#header {
+   color: orange;
+}
+
+#content {
+   color: gray;
+}
+
+.title {
+   color: orange;
+}
+
+.text {
+   color: gray;
+}
