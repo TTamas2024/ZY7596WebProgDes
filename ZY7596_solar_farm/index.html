@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Napenergia Kft.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      #video-section {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      video {
+        display: block;
+        width: 100%;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .controls {
+        display: inline-flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        color: white;
+        width: 100%;
+      }
+
+      .controls button {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 0 20px;
+      }
+
+      .controls button:hover {
+        color: #1a73e8;
+      }
+
+      .progress-container {
+        flex-grow: 1;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 5px;
+        background-color: #555;
+      }
+
+      .progress {
+        width: 0;
+        height: 100%;
+        background-color: #1a73e8;
+      }
+
+      .video-info {
+        margin-left: auto;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        white-space: nowrap;
+      }
+
+      .video-info a {
+        color: #1a73e8;
+        text-decoration: none;
+      }
+
+      .video-info a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Napelem Telepítés</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Főoldal</a></li>
+          <li><a href="about.html">Rólunk</a></li>
+          <li><a href="services.html">Szolgáltatások</a></li>
+          <li><a href="form.html">Árajánlatkérés</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Üdvözöljük a Napenergia világában!</h2>
+        <p>
+          A napelemek a fenntartható jövő kulcsai. Segítünk Önnek a napenergia
+          kiaknázásában, hogy csökkentse energiafogyasztását és hozzájáruljon a
+          környezetvédelemhez.
+        </p>
+      </section>
+
+      <section>
+        <h2>Miért válasszon minket?</h2>
+        <p>
+          Napelem telepítésével jelentős mértékben csökkentheti villanyszámláját
+          és még többet takaríthat meg a jövőben. Tapasztalt szakemberek
+          vagyunk, és a legmodernebb technológiákat alkalmazzuk.
+        </p>
+      </section>
+
+      <section id="video-section">
+        <div class="video-container">
+          <video id="video" width="100%" autoplay>
+            <source src="/assets/videos/solar-farm.mp4" type="video/mp4" />
+            A böngésző nem támogatja a videó lejátszását.
+          </video>
+        </div>
+
+        <div class="controls">
+          <button class="start-stop-btn">
+            <span class="material-icons">play_arrow</span>
+          </button>
+          <button class="volume-down-btn">
+            <span class="material-icons">volume_down</span>
+          </button>
+          <button class="mute-btn">
+            <span class="material-icons">volume_up</span>
+          </button>
+          <button class="volume-up-btn">
+            <span class="material-icons">volume_up</span>
+          </button>
+          <button class="restart-btn">
+            <span class="material-icons">replay</span>
+          </button>
+
+          <span class="video-info">
+            <a
+              href="https://pixabay.com/hu/users/juras2021-24850305/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=168801"
+              >Juras2021</a
+            >
+            videója a
+            <a
+              href="https://pixabay.com/hu//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=168801"
+              >Pixabay</a
+            >-ről
+          </span>
+        </div>
+      </section>
+
+      <aside>
+        <h3>Friss hírek</h3>
+        <ul>
+          <li>
+            <a href="#">Új támogatási lehetőségek napelemes rendszerekhez</a>
+          </li>
+          <li>
+            <a href="#"
+              >Hogyan csökkenthetjük a háztartási energiafogyasztást?</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Napenergia Kft.</p>
+    </footer>
+
+    <script>
+      const video = document.querySelector('#video');
+      const startStopBtn = document.querySelector('.start-stop-btn');
+      const volumeDownBtn = document.querySelector('.volume-down-btn');
+      const muteBtn = document.querySelector('.mute-btn');
+      const volumeUpBtn = document.querySelector('.volume-up-btn');
+      const restartBtn = document.querySelector('.restart-btn');
+
+      startStopBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          startStopBtn.innerHTML = '<span class="material-icons">pause</span>';
+        } else {
+          video.pause();
+          startStopBtn.innerHTML =
+            '<span class="material-icons">play_arrow</span>';
+        }
+      });
+
+      volumeDownBtn.addEventListener('click', () => {
+        video.volume = Math.max(0, video.volume - 0.1);
+      });
+
+      muteBtn.addEventListener('click', () => {
+        if (video.muted) {
+          video.muted = false;
+          muteBtn.innerHTML = '<span class="material-icons">volume_up</span>';
+        } else {
+          video.muted = true;
+          muteBtn.innerHTML = '<span class="material-icons">volume_off</span>';
+        }
+      });
+
+      volumeUpBtn.addEventListener('click', () => {
+        video.volume = Math.min(1, video.volume + 0.1);
+      });
+
+      restartBtn.addEventListener('click', () => {
+        video.currentTime = 0;
+        video.play();
+      });
+    </script>
+  </body>
+</html>

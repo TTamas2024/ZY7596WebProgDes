@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Árajánlatkérés - Napenergia Kft.</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      label[for='steps'] {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        display: block;
+        color: #333;
+      }
+
+      #steps {
+        list-style-type: decimal;
+        padding-left: 20px;
+        font-size: 1.05em;
+        color: #444;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      #steps li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+
+      #steps li:hover {
+        background-color: #f4f4f4;
+        cursor: default;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Árajánlatkérés</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="about.html">Rólunk</a></li>
+          <li><a href="services.html">Szolgáltatások</a></li>
+          <li><a href="form.html" class="active">Árajánlatkérés</a></li>
+          <li><a href="contact.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form action="process_form.php" method="post">
+        <label for="name">Név:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="area">Telepítés területe (m²):</label>
+        <input type="number" id="area" name="area" required />
+
+        <label for="budget">Becsült költségvetés:</label>
+        <input type="number" id="budget" name="budget" required />
+
+        <label for="description">Projekt leírása:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          placeholder="Írja le röviden a projektet"
+        ></textarea>
+
+        <label for="installation-type">Telepítés típusa:</label>
+        <datalist id="installation-type">
+          <option value="Kisebb ház"></option>
+          <option value="Nagyobb ház"></option>
+          <option value="Ipari terület"></option>
+        </datalist>
+
+        <input
+          list="installation-type"
+          name="installation"
+          id="installation-type"
+        />
+
+        <fieldset>
+          <legend>Elérhetőségek</legend>
+          <label>
+            <input type="checkbox" name="newsletter" /> Iratkozz fel a
+            hírlevelünkre
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Szolgáltatás típusa</legend>
+          <label>
+            <input
+              type="radio"
+              name="service_type"
+              value="Telepítés"
+              required
+            />
+            Telepítés
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="service_type"
+              value="Tanácsadás"
+              required
+            />
+            Tanácsadás
+          </label>
+        </fieldset>
+
+        <label for="color">Színválasztás:</label>
+        <input type="color" id="color" name="color" value="#ff0000" />
+
+        <label for="date">Kivitelezés dátuma:</label>
+        <input type="date" id="date" name="date" />
+
+        <label for="steps">Következő lépések:</label>
+        <ol id="steps">
+          <li>Első lépés: Az ajánlat kérése</li>
+          <li>Második lépés: A költségvetés megadása</li>
+          <li>Harmadik lépés: A telepítés és kivitelezés megbeszélése</li>
+        </ol>
+
+        <button type="submit">Árajánlat Kérés</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Napenergia Kft.</p>
+    </footer>
+  </body>
+</html>
